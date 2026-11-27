@@ -1,5 +1,6 @@
 import { Phonebook } from "./Phonebook";
 
+
 export const App = () => {
   return (
     <div
@@ -15,7 +16,7 @@ export const App = () => {
       {/* React homework template */}
 
       <Phonebook/>
-      
+
     </div>
   );
 };

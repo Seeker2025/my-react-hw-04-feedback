@@ -1,9 +1,10 @@
 import  React from 'react';
 
 import { PhonebookItem  } from './Phonebook.styled';
-import { FormSub        } from 'components/AddContact/AddContact';
+// import { FormSub        } from 'components/AddContact/AddContact';
 import { FindForm       } from 'components/FindContact/FindContact';
-import { ContactBl      } from 'components/ContactBlock/ContactBlock';
+import { ContactBl      } from '../ContactBlock/ContactBlock';
+import { FormSub   } from '../AddContact/AddContact';
 
 import { nanoid         } from "nanoid";
 
@@ -92,7 +93,7 @@ export class Phonebook extends React.Component{
         const filteredCont = this.toFilter();
         return(
             <PhonebookItem>
-                <Section title={"Phonebook"}>
+               
 
                         <FormSub 
                         onSubmit={this.handleSubmit}
@@ -101,52 +102,24 @@ export class Phonebook extends React.Component{
                         valNumb={this.state.number}
                         />
 
-                </Section>
+               
 
-                {/* <form onSubmit ={this.handleSubmit}>
-                    <h3>Name</h3>
-                     <input 
-                        type="text" name="name"
-                        onChange={this.handleChange}
-                        value={this.state.name}
-                        required
-                     />
-                    <h3>Number</h3>    
-                     <input
-                        type="tel"
-                        name="number"
-                        value={this.state.number}
-                        onChange={this.handleChange}
-                        required
-                     />
-
-                <button type="submit">Add Contact</button>     
-                </form> */}
-                {/* <h2>Find contacts by name </h2>
-                    <input 
-                        type="text"
-                        name="filter"
-                        onChange={this.handleChange}
-                        value={this.state.filter}
-                        
-                     /> */}
-                <Section title={"Find contacts by name"}
-                >   
+              
+                  
                     <FindForm
                     handle={this.handleChange}
                     valFiltr={this.state.filter}
                     /> 
+   
 
-                </Section>      
-
-                <Section title={"Contacts"}>
+               
 
                         <ContactBl 
                         filtered={filteredCont}
                         toDelete ={this.toDelete}
                         />
 
-                </Section>  
+                
                
 
             </PhonebookItem>
